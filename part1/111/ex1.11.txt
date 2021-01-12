@@ -1,0 +1,1 @@
+docker container run -p 8000:8000 -v "$(pwd)/logs.txt:/app/logs.txt"  backend-example-docker
