@@ -1,0 +1,1 @@
+Changed API_URL environment variable to http://localhost/api
