@@ -1,0 +1,30 @@
+version: "3.5"
+
+services:
+  backend:
+    build:
+      context: https://github.com/docker-hy/ml-kurkkumopo-backend.git
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
+    depends_on:
+      - ml
+    volumes:
+      - ./model:/src/model
+      
+  frontend:
+    build:
+      context: https://github.com/docker-hy/ml-kurkkumopo-frontend.git
+      dockerfile: ./Dockerfile
+    environment:
+      - API_URL=http://localhost:8000
+    ports:
+      - 3000:3000
+      
+  ml:
+    build:
+      context: https://github.com/docker-hy/ml-kurkkumopo-training.git
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./imgs:/src/imgs
+      - ./model:/src/model
