@@ -1,0 +1,2 @@
+https://github.com/motilainen/spring-example-project
+https://dockerpipeline.herokuapp.com/press
