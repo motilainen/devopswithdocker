@@ -1,0 +1,4 @@
+Old image 599mb 
+New image 190mb
+
+Running container as non-root.
