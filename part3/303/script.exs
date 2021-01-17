@@ -1,6 +1,3 @@
-# Download repo
-# Build Dockerfile
-# Publish to Docker Hub
 defmodule Devops do
   def start() do
     IO.puts("---DevOps with Docker---")
@@ -47,6 +44,7 @@ defmodule Devops do
 
   def docker_build(repo_name) do
     folder = "./#{repo_name}"
+
     if File.exists?("#{folder}/Dockerfile") do
       System.cmd("docker", ["image", "build", "-t", repo_name, folder])
       {:ok, repo_name}
@@ -69,4 +67,3 @@ defmodule Devops do
 end
 
 Devops.start()
-# Devops.download_repo("https://github.com/motilainen/spring-example-project.git")
